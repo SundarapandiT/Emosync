@@ -1,11 +1,9 @@
-import PropTypes from 'prop-types';
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 // Import the external CSS
-import "../musicplayer.css";
 
 const playlist = [
   {
-    type: 'Happy',
+    type: 'happy',
     songs: [
       { title: 'Pala Palakura', artist: 'Artist 1', url: 'path/to/song1.mp3' },
       { title: 'Po Indru Neeyaga', artist: 'Artist 2', url: 'path/to/song2.mp3' },
@@ -15,7 +13,7 @@ const playlist = [
     ]
   },
   {
-    type: 'Sad',
+    type: 'sad',
     songs: [
       { title: 'Kanave Kanave', artist: 'Artist 1', url: 'path/to/song6.mp3' },
       { title: 'Ennodu Nee Irunthal', artist: 'Artist 2', url: 'path/to/song7.mp3' },
@@ -26,7 +24,7 @@ const playlist = [
     ]
   },
   {
-    type: 'Neutral',
+    type: 'neutral',
     songs: [
       { title: 'Valayapatti Thavilu', artist: 'Artist 1', url: 'path/to/song12.mp3' },
       { title: 'Vaada Maaplila', artist: 'Artist 2', url: 'path/to/song13.mp3' },
@@ -36,19 +34,17 @@ const playlist = [
   }
 ];
 
-function MusicPlayer({ emotion = "Happy" }) {
+function MusicPlayer({ emotion }) {
   const [currentSong, setCurrentSong] = useState(null);
   const [progress, setProgress] = useState(0);
   const audioRef = useRef(null);
 
   // Update the progress bar as the song plays
   const handleTimeUpdate = () => {
-    if (audioRef.current) {
-      const currentTime = audioRef.current.currentTime;
-      const duration = audioRef.current.duration;
-      if (duration) {
-        setProgress((currentTime / duration) * 100);
-      }
+    const currentTime = audioRef.current.currentTime;
+    const duration = audioRef.current.duration;
+    if (duration) {
+      setProgress((currentTime / duration) * 100);
     }
   };
 
@@ -56,20 +52,14 @@ function MusicPlayer({ emotion = "Happy" }) {
   useEffect(() => {
     if (audioRef.current) {
       setProgress(0);
-      audioRef.current.currentTime = 0;
     }
   }, [currentSong]);
-
-  // Reset the current song when the emotion changes
-  useEffect(() => {
-    setCurrentSong(null);
-  }, [emotion]);
 
   const filteredPlaylist = playlist.find((mylist) => mylist.type === emotion);
 
   return (
     <div className="music-player-container">
-      <h2>Recommended Songs for {emotion} Emotion</h2>
+      <h2>Recommended Songs for "{emotion}" Emotion</h2>
 
       {filteredPlaylist ? (
         <div className="playlist">
@@ -83,12 +73,7 @@ function MusicPlayer({ emotion = "Happy" }) {
                 <p><strong>{song.title}</strong></p>
                 <p>{song.artist}</p>
               </div>
-              <button
-                className="play-button"
-                aria-label={`Play ${song.title} by ${song.artist}`}
-              >
-                ▶️
-              </button>
+              <button className="play-button">▶️</button>
             </div>
           ))}
         </div>
@@ -106,21 +91,11 @@ function MusicPlayer({ emotion = "Happy" }) {
             onTimeUpdate={handleTimeUpdate}
             autoPlay
           ></audio>
-          <progress
-            className="progress-bar"
-            value={progress}
-            max="100"
-            aria-label="Song progress"
-          ></progress>
+          <progress className="progress-bar" value={progress} max="100"></progress>
         </div>
       )}
     </div>
   );
 }
-
-// Define prop types
-MusicPlayer.propTypes = {
-  emotion: PropTypes.string
-};
 
 export default MusicPlayer;
