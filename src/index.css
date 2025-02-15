@@ -233,3 +233,65 @@ main {
     width: 100%;
   }
 }
+/* Footer Styling */
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #0077b5; /* LinkedIn color */
+}
+
+.footer-copyright {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 5px;
+  }
+
+  .footer-content p {
+    font-size: 14px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 20px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+  }
+}
