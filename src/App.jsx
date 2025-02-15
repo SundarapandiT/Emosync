@@ -5,6 +5,7 @@ import GetEmotion from './components/GetEmotion';
 import About from './components/About';
 import './index.css'; // Import the external CSS file
 import "./about.css";
+import "./musicplayer.css";
 
 function App() {
   return (
