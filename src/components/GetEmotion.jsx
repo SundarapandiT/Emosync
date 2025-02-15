@@ -3,7 +3,7 @@ import axios from "axios";
 import MusicPlayer from "./MusicPlayer";
 
 function GetEmotion() {
-  const [emotion, setEmotion] = useState("Happy"); // Default emotion
+  const [emotion, setEmotion] = useState("happy"); // Default emotion
   const videoRef = useRef(null);
 
   const captureImage = () => {
