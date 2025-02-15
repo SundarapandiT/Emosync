@@ -6,6 +6,7 @@ import About from './components/About';
 import './index.css'; // Import the external CSS file
 import "./about.css";
 import './musicplayer.css';
+import { FaLinkedin, FaEnvelope } from 'react-icons/fa'; // Import icons
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,10 +19,12 @@ function App() {
           path="/"
           element={
             <div>
+              
               <header className="header">
                 <div className="logo">
                   <img src="emosync_logo.png" alt="logo" /><h1>Emosync</h1>
                 </div>
+              
 
                 {/* Hamburger Menu Button */}
                 <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
@@ -33,7 +36,7 @@ function App() {
                 <nav className={`nav ${menuOpen ? "active" : ""}`}>
                   <ul className="nav-list">
                     <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
-                    <li><Link to="/songs" onClick={() => setMenuOpen(false)}>Songs</Link></li>
+                    <li><Link to="/musicplayer" onClick={() => setMenuOpen(false)}>Songs</Link></li>
                     <li><Link to="#" onClick={() => setMenuOpen(false)}>Help</Link></li>
                   </ul>
                 </nav>
@@ -58,6 +61,24 @@ function App() {
                   <img src="emosync bg1.jpg" alt="emosync picture" />
                 </div>
               </main>
+
+              {/* Footer */}
+              <footer className="footer">
+                <div className="footer-content">
+                  <p>Created by BE(CSE) - 2025 Batch:</p>
+                  <p><b>Sundarapandi T, Sasikumar R, Raviprakasham MT, Gokul R</b></p>
+                  <div className="footer-links">
+                    <a href="https://www.linkedin.com/in/sundarapandi-t-5a1772247/" target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin size={24} />
+                    </a>
+                    <a href="mailto:sundarapandi1707@gmail.com">
+                      <FaEnvelope size={24} />
+                    </a>
+                  </div>
+                </div>
+                <p className="footer-copyright">© 2025 Emosync. All Rights Reserved.</p>
+              </footer>
+
             </div>
           }
         />
