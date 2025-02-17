@@ -4,6 +4,7 @@ import MusicPlayer from "./MusicPlayer";
 
 function GetEmotion() {
   const [emotion, setEmotion] = useState("happy"); // Default emotion
+  const [loading, setLoading] = useState(false); 
   const videoRef = useRef(null);
 
   const captureImage = () => {
@@ -27,6 +28,7 @@ function GetEmotion() {
     }
 
     try {
+      setLoading(true); // Start loading
       const blob = await fetch(imageBase64).then(res => res.blob());
       const formData = new FormData();
       formData.append("image", blob, "captured_image.jpg");
@@ -37,6 +39,8 @@ function GetEmotion() {
       console.log(`Detected Emotion: ${detectedEmotion}`);
     } catch (error) {
       console.error("Error detecting emotion:", error);
+    }finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -61,7 +65,7 @@ function GetEmotion() {
       <video ref={videoRef} autoPlay style={{ width: "20%", height: "auto" }}></video>
       <button onClick={detectEmotion}>Detect Emotion</button>
       <p>Detected Emotion: {emotion}</p>
-      <MusicPlayer emotion={emotion} />
+      <MusicPlayer emotion={emotion} loading={loading}/>
     </div>
   );
 }
