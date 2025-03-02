@@ -61,9 +61,9 @@ function GetEmotion() {
 
   return (
     <div>
-      <h1>Scanning Your Face...</h1>
-      <video ref={videoRef} autoPlay style={{ width: "20%", height: "auto" }}></video>
-      <button onClick={detectEmotion}>Detect Emotion</button>
+      <h1 className="texthead">Lets find Your Mood</h1>
+      <video ref={videoRef} autoPlay style={{ width: "20%", height: "auto" }}></video> <br />
+      <button onClick={detectEmotion} className="glow-button" style={{ background:'black',margin:'10px' }}>Detect Emotion</button>
       <p>Detected Emotion: {emotion}</p>
       <MusicPlayer emotion={emotion} loading={loading}/>
     </div>

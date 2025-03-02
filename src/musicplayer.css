@@ -1,10 +1,15 @@
 /* musicplayer.css */
-
+.texthead{
+  font-size: 3rem;
+  background: linear-gradient(to right, #ff00ff,rgb(192, 4, 35), #002aff,rgb(62, 2, 122));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .music-player-container {
     padding: 20px;
     font-family: Arial, sans-serif;
     color: #fff;
-    background-color: #121212;
+    background-color: #17022a;
     min-height: 100vh;
   }
   
@@ -15,7 +20,7 @@
   }
   
   .song-card {
-    background-color: #1f1f1f;
+    background-color: #420453;
     padding: 10px;
     border-radius: 8px;
     display: flex;
@@ -26,11 +31,15 @@
   }
   
   .song-card:hover {
-    background-color: #292929;
+    background-color: #000000;
+  box-shadow: 0 0 20px #ff00ff;
+
   }
   
   .song-card.active {
-    background-color: #1db954;
+    background-color: #9f1db9;
+  box-shadow: 0 0 10px #ff00ff;
+    
     color: #fff;
   }
   
@@ -55,13 +64,15 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #292929;
+    background-color: #32063b;
     padding: 10px 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     color: #fff;
     border-top: 1px solid #333;
+    z-index: 2;
   }
   
   .progress-bar {
@@ -78,7 +89,7 @@
   }
   
   progress::-webkit-progress-value {
-    background-color: #1db954;
+    background-color: #f4c127;
     border-radius: 5px;
   }
   
