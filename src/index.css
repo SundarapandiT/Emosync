@@ -1,6 +1,9 @@
 /* styles.css */
 
 /* Gradient Background */
+body, html {
+    overflow-x: hidden;
+}
 body {
   background: linear-gradient(135deg, #1e003a, #0a002e);
   color: white;
@@ -167,11 +170,14 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+  }
   .header {
     flex-direction: column;
     text-align: center;
     padding: 15px;
-    overflow-x: hidden;
+    
   }
 
   .logo {
