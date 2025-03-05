@@ -22,6 +22,7 @@ body {
   font-weight: 600;
   font-size: 1.2em;
   z-index: 1000;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -166,13 +167,11 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-}
   .header {
     flex-direction: column;
     text-align: center;
     padding: 15px;
+    overflow-x: hidden;
   }
 
   .logo {
