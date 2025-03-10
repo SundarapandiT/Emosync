@@ -5,21 +5,21 @@ const playlist = [
   {
     type: "happy",
     songs: [
-      { title: "Pala Palakura", artist: "Artist 1", url: "path/to/song1.mp3" },
-      { title: "Po Indru Neeyaga", artist: "Artist 2", url: "path/to/song2.mp3" },
-      { title: "Aathadi Aathadi", artist: "Artist 3", url: "path/to/song3.mp3" },
-      { title: "Manasilaayo", artist: "Artist 4", url: "path/to/song4.mp3" },
-      { title: "Arabic Kuthu", artist: "Artist 5", url: "path/to/song5.mp3" }
+      { title: "Pala Palakura", artist: "Artist 1", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Pala%20Palakura.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9QYWxhIFBhbGFrdXJhLm1wMyIsImlhdCI6MTc0MTYzMjA2NCwiZXhwIjoxNzczMTY4MDY0fQ.VcfKYG69Xp-kQkPpeu1RCjET6sNx7SG8XWDnaZnFaK0" },
+      { title: "Po Indru Neeyaga", artist: "Artist 2", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Po%20Indru%20Neeyaga.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9QbyBJbmRydSBOZWV5YWdhLm1wMyIsImlhdCI6MTc0MTYzMjE5OSwiZXhwIjoxNzczMTY4MTk5fQ.EJBm6Y_LoFnQWV1fkqCDDJFuXPxTPWo7uhpadwaAFJM" },
+      { title: "Aathadi Aathadi", artist: "Artist 3", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Aathadi-Aathadi.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9BYXRoYWRpLUFhdGhhZGkubXAzIiwiaWF0IjoxNzQxNjMxOTU4LCJleHAiOjE3NzMxNjc5NTh9.n7sec3EqNk0MpLddr3zF6g7J9f3pyRty5n40am3GdEc" },
+      { title: "Manasilaayo", artist: "Artist 4", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Manasilaayo.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9NYW5hc2lsYWF5by5tcDMiLCJpYXQiOjE3NDE2MzIwNDIsImV4cCI6MTc3MzE2ODA0Mn0.Ax72SeQbVc3V5S57EYVKyzxt4Iui7PyqB9UwVwHDzJ4" },
+      { title: "Arabic Kuthu", artist: "Artist 5", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Arabic%20Kuthu(KoshalWorld.Com).mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9BcmFiaWMgS3V0aHUoS29zaGFsV29ybGQuQ29tKS5tcDMiLCJpYXQiOjE3NDE2MzIyNTQsImV4cCI6MTc3MzE2ODI1NH0.gvkHYvArzmsp5Mb_p8c1zeGcFjK-qASeZS6NLS9vQgU" }
     ]
   },
   {
     type: "sad",
     songs: [
-      { title: "Kanave Kanave", artist: "Artist 1", url: "path/to/song6.mp3" },
-      { title: "Ennodu Nee Irunthal", artist: "Artist 2", url: "path/to/song7.mp3" },
-      { title: "Po Nee Po", artist: "Artist 3", url: "path/to/song8.mp3" },
-      { title: "Shoot the Kuruvi", artist: "Artist 4", url: "path/to/song9.mp3" },
-      { title: "Yamma Yamma", artist: "Artist 5", url: "path/to/song10.mp3" }
+      { title: "Kanave Kanave", artist: "Artist 1", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Kanave-Kanave-MassTamilan.com.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvS2FuYXZlLUthbmF2ZS1NYXNzVGFtaWxhbi5jb20ubXAzIiwiaWF0IjoxNzQxNjMyOTQ2LCJleHAiOjE3NzMxNjg5NDZ9.LzvFsrQzquHjuKT5rii2AiTs8LygfgBmcskGVB4I9v0" },
+      { title: "Ennodu Nee Irunthal", artist: "Artist 2", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Ennodu-Nee-Irundhal.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvRW5ub2R1LU5lZS1JcnVuZGhhbC5tcDMiLCJpYXQiOjE3NDE2MzI5MzQsImV4cCI6MTc3MzE2ODkzNH0.NI0Rovi94HMBgzIMpCHtCumdWfGdfne82OB-x1WlWSU" },
+      { title: "Po Nee Po", artist: "Artist 3", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Poo-Nee-Poo-2.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvUG9vLU5lZS1Qb28tMi5tcDMiLCJpYXQiOjE3NDE2MzI5NTcsImV4cCI6MTc3MzE2ODk1N30.5ZWYM3uHrx6A1cpWfJzdtcf5wV7lqOIgcgV9RiK0-DM" },
+      { title: "Shoot the Kuruvi", artist: "Artist 4", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Shoot-the-Kuruvi.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvU2hvb3QtdGhlLUt1cnV2aS5tcDMiLCJpYXQiOjE3NDE2MzI5NzAsImV4cCI6MTc3MzE2ODk3MH0.rQ9yL5YvG26VkK3GpjL0kzmnrqTfCfK7TTcBcHJWbJc" },
+      { title: "Yamma Yamma", artist: "Artist 5", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Yamma-Yamma.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvWWFtbWEtWWFtbWEubXAzIiwiaWF0IjoxNzQxNjMyOTgzLCJleHAiOjE3NzMxNjg5ODN9.1xqK_IBiWj-DGdyjqEQR2aaSsEWzh8D2egw5NJu36rg" }
     ]
   },
   {
