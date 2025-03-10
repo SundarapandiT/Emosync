@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { supabase } from "./supabaseClient";
 import { useNavigate } from "react-router-dom";
-import bcrypt from "bcryptjs"; // Import bcrypt for password hashing
+// import bcrypt from "bcryptjs";
 
 const Register = ({ setUser }) => {
   const [email, setEmail] = useState("");

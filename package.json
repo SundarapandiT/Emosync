@@ -16,6 +16,7 @@
         "@mui/material": "^6.3.0",
         "@supabase/supabase-js": "^2.49.1",
         "axios": "^1.7.9",
+        "bcryptjs": "^3.0.2",
         "emotion-music-app": "file:",
         "prop-types": "^15.8.1",
         "react": "^18.3.1",
