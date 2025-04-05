@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import YouTube from 'react-youtube'; // Import React-YouTube
+import YouTube from 'react-youtube'; 
+import { FaPlay, FaPause, FaBackward, FaForward } from 'react-icons/fa';
+
 
 const playlist = [
   {
@@ -158,9 +160,11 @@ function MusicPlayer({ emotion, loading }) {
           <progress className="progress-bar" value={progress} max="100"></progress>
 
           <div className="controls">
-            <button onClick={prevSong}>⏪ Prev</button>
-            <button onClick={togglePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
-            <button onClick={nextSong}>⏩ Next</button>
+            <button onClick={prevSong}><FaBackward size={24} /></button>
+            <button onClick={togglePlayPause}>
+              {isPlaying ? <FaPause size={24} /> : <FaPlay size={24} />}
+            </button>
+            <button onClick={nextSong}><FaForward size={24} /></button>
           </div>
         </div>
       )}
