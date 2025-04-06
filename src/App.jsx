@@ -7,9 +7,12 @@ import Home from "./components/Home";
 import MusicPlayer from "./components/MusicPlayer";
 import GetEmotion from "./components/GetEmotion";
 import About from "./components/About";
+import Songs from "./components/Songs";
 import { supabase } from "./components/supabaseClient";
 import "./about.css";
 import "./musicplayer.css";
+import "./songs.css";
+import "./login.css"
 import Login from "./components/Login";
 import Register from "./components/Register";
 
@@ -59,7 +62,7 @@ function App() {
                 </Link>
               </li>
               <li>
-                <Link to="/musicplayer" onClick={() => setMenuOpen(false)}>
+                <Link to="/songs" onClick={() => setMenuOpen(false)}>
                   Songs
                 </Link>
               </li>
@@ -105,6 +108,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/songs" element={<Songs />} />
         </Routes>
 
         <footer className="footer">

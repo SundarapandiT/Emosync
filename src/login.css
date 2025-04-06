@@ -1,0 +1,160 @@
+/* Login.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #e0e0e0);
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-card {
+    background: #ffffff;
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 1px 8px 30px rgba(195, 94, 242, 0.442);
+    width: 350px;
+    max-width: 80%;
+    text-align: center;
+  }
+  
+  .login-card h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .login-card input {
+    width: 80%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    border: 1px solid #0e06e8;
+    transition: border 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .login-card input:focus {
+    outline: none;
+    border: 1px solid #6c63ff;
+  }
+  
+  .login-card button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #6c63ff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-card button:hover {
+    background-color: #5848d7;
+  }
+  
+  .message {
+    margin-top: 1rem;
+    color: crimson;
+  }
+  
+  .signup-link {
+    margin-top: 1rem;
+    color: #6c63ff;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+  
+  .signup-link:hover {
+    color: #4a3fce;
+  }
+  /* Auth.css or include in global App.css */
+
+
+  
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    
+  }
+  
+
+  .auth-container > div,
+  .auth-container {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 1px 8px 30px rgba(195, 94, 242, 0.442);
+    width: 360px;
+    max-width: 80%;
+    text-align: center;
+    
+  }
+  
+  .auth-container h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .auth-container input {
+    width: 80%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    border: 1px solid #0e06e8;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .auth-container input:focus {
+    border-color: #6c63ff;
+    outline: none;
+  }
+  
+  .auth-container button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #6c63ff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-container button:hover {
+    background-color: #594bd7;
+  }
+  
+  .message {
+    margin-top: 1rem;
+    color: crimson;
+    font-size: 0.95rem;
+  }
+  
+  .login-link {
+    margin-top: 1rem;
+    color: #6c63ff;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+  
+  .login-link:hover {
+    color: #4a3fce;
+  }
+  
