@@ -42,35 +42,36 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
-      <p>{message}</p>
-      <br />
-      <p
-        onClick={() => navigate("/register")}
-        style={{ cursor: "pointer", color: "pink", textDecoration: "underline" }}
-      >
-        Don't have an account? Signup here
-      </p>
-    </div>
-  );
+      <div className="login-container">
+        <div className="login-card">
+          <h2>Login</h2>
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+          <p className="message">{message}</p>
+          <p
+            onClick={() => navigate("/register")}
+            className="signup-link"
+          >
+            Don't have an account? Signup here
+          </p>
+        </div>
+      </div>
+    );
 };
 
 export default Login;
