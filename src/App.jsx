@@ -16,6 +16,7 @@ import "./login.css"
 import Login from "./components/Login";
 import Register from "./components/Register";
 
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
