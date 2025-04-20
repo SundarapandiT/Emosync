@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import MusicPlayer from "./MusicPlayer";
+import toast, { Toaster } from "react-hot-toast";
 
 function GetEmotion() {
-  const [emotion, setEmotion] = useState("happy"); // Default emotion
-  const [loading, setLoading] = useState(false); 
+  const [emotion, setEmotion] = useState("happy");
+  const [loading, setLoading] = useState(false);
   const videoRef = useRef(null);
 
   const captureImage = () => {
@@ -23,24 +24,28 @@ function GetEmotion() {
   const detectEmotion = async () => {
     const imageBase64 = captureImage();
     if (!imageBase64) {
-      console.error("Failed to capture image.");
+      toast.error("Failed to capture image.");
       return;
     }
 
+    const toastId = toast.loading("Scanning your emotion...");
+
     try {
-      setLoading(true); // Start loading
-      const blob = await fetch(imageBase64).then(res => res.blob());
+      setLoading(true);
+      const blob = await fetch(imageBase64).then((res) => res.blob());
       const formData = new FormData();
       formData.append("image", blob, "captured_image.jpg");
 
       const response = await axios.post("https://python-ai-model-service.onrender.com/predict", formData);
       const detectedEmotion = response.data.emotion;
       setEmotion(detectedEmotion);
-      console.log(`Detected Emotion: ${detectedEmotion}`);
+
+      toast.success(`Detected Emotion: ${detectedEmotion}`, { id: toastId });
     } catch (error) {
       console.error("Error detecting emotion:", error);
-    }finally {
-      setLoading(false); // Stop loading
+      toast.error("Error detecting emotion.", { id: toastId });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -61,11 +66,23 @@ function GetEmotion() {
 
   return (
     <div>
-      <h1 className="texthead">Lets find Your Mood</h1>
-      <video ref={videoRef} autoPlay style={{ width: "20%", height: "auto" }}></video> <br />
-      <button onClick={detectEmotion} className="glow-button" style={{ background:'black',margin:'10px' }}>Detect Emotion</button>
-      <p>Detected Emotion: {emotion}</p>
-      <MusicPlayer emotion={emotion} loading={loading}/>
+      <Toaster position="top-center" reverseOrder={false} />
+      <h1 className="texthead">Let’s find your mood</h1>
+
+      {/* Hidden video stream */}
+      <video ref={videoRef} autoPlay style={{ display: "none" }} />
+
+      <button
+        onClick={detectEmotion}
+        className="glow-button"
+        style={{ background: "black", margin: "10px" }}
+      >
+        Detect Emotion
+      </button>
+
+      {/* {!loading && <p>Detected Emotion: {emotion}</p>} */}
+
+      <MusicPlayer emotion={emotion} loading={loading} />
     </div>
   );
 }

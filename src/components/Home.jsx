@@ -10,7 +10,7 @@ const Home = () => {
         <h1>Music <span className="highlight">Recommendation</span> System</h1>
         <p>Our AI-powered system reads your emotions and recommends the perfect playlist to match your vibe.
            Discover the music that understands you. Sync your emotions with <b>Emosync!</b></p>
-         <button className="glow-button" onClick={() => navigate("/getemotion")}>
+         <button className="glow-button" onClick={() => navigate("/songs")}>
           Get Started and Listen!
         </button>
       </div>

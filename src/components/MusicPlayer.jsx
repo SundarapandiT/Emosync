@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import YouTube from 'react-youtube'; 
 import { FaPlay, FaPause, FaBackward, FaForward } from 'react-icons/fa';
 
@@ -18,37 +18,37 @@ const playlist = [
     type: "sad",
     songs: [
       { title: "Kanave Kanave", artist: "Artist 1", url: "https://www.youtube.com/watch?v=MofM9B2NZpY" },
-      { title: "Ennodu Nee Irunthal", artist: "Artist 2", url: "" },
-      { title: "Po Nee Po", artist: "Artist 3", url: "" },
-      { title: "Shoot the Kuruvi", artist: "Artist 4", url: "" },
-      { title: "Yamma Yamma", artist: "Artist 5", url: "" }
+      { title: "Ennodu Nee Irunthal", artist: "Artist 2", url: "https://www.youtube.com/watch?v=1bQHXTUzX_k" },
+      { title: "Po Nee Po", artist: "Artist 3", url: "https://www.youtube.com/watch?v=LFYdyFHVVR8" },
+      { title: "Shoot the Kuruvi", artist: "Artist 4", url: "https://www.youtube.com/watch?v=3yPst9pIp7s" },
+      { title: "Yamma Yamma", artist: "Artist 5", url: "https://www.youtube.com/watch?v=r9YH9ssOozk" }
     ]
   },
   {
     type: "neutral",
     songs: [
-      { title: "Valayapatti Thavilu", artist: "Artist 1", url: "" },
-      { title: "Vaada Maaplila", artist: "Artist 2", url: "" },
-      { title: "Bhoomi Enna Suthuthe", artist: "Artist 3", url: "" },
-      { title: "Selfie Pulla", artist: "Artist 4", url: "" }
+      { title: "Valayapatti Thavilu", artist: "Artist 1", url: "https://www.youtube.com/watch?v=Z3_W8qVf9Kw" },
+      { title: "Vaada Maaplila", artist: "Artist 2", url: "https://www.youtube.com/watch?v=JUmqlpbqfJQ" },
+      { title: "Bhoomi Enna Suthuthe", artist: "Artist 3", url: "https://www.youtube.com/watch?v=RqaOWVQw4us" },
+      { title: "Selfie Pulla", artist: "Artist 4", url: "https://www.youtube.com/watch?v=XXVj8V1_M4w" }
     ]
   },
   {
     type: "angry",
     songs: [
-      { title: "Munbe Vaa", artist: "A.R. Rahman", url: "" },
-      { title: "New York Nagaram", artist: "A.R. Rahman", url: "" },
-      { title: "Enna Solla Pogirai", artist: "Shankar Mahadevan", url: "" },
-      { title: "Kannalane", artist: "K.S. Chithra", url: "" }
+      { title: "Munbe Vaa", artist: "A.R. Rahman", url: "https://www.youtube.com/watch?v=n1RSHgx8o2Q" },
+      { title: "New York Nagaram", artist: "A.R. Rahman", url: "https://www.youtube.com/watch?v=XzYp9GJlgxI" },
+      { title: "Enna Solla Pogirai", artist: "Shankar Mahadevan", url: "https://www.youtube.com/watch?v=Yx7fhdzY-QA" },
+      { title: "Kannalane", artist: "K.S. Chithra", url: "https://www.youtube.com/watch?v=ZZfZvktgTbI" }
     ]
   },
   {
     type: "fear",
     songs: [
-      { title: "Nenjukkul Peidhidum", artist: "Hariharan", url: "" },
-      { title: "Thalli Pogathey", artist: "Sid Sriram", url: "" },
-      { title: "Uyire Uyire", artist: "Hariharan", url: "" },
-      { title: "Kaadhal Rojave", artist: "S.P. Balasubrahmanyam", url: "" }
+      { title: "Nenjukkul Peidhidum", artist: "Hariharan", url: "https://www.youtube.com/watch?v=HnmTSJKXNOM" },
+      { title: "Thalli Pogathey", artist: "Sid Sriram", url: "https://www.youtube.com/watch?v=9uB5wzRgjAA" },
+      { title: "Uyire Uyire", artist: "Hariharan", url: "https://www.youtube.com/watch?v=pRbREgHqgEA" },
+      { title: "Kaadhal Rojave", artist: "S.P. Balasubrahmanyam", url: "https://www.youtube.com/watch?v=aeBfaYWQfpM" }
     ]
   }
 ];
@@ -143,13 +143,13 @@ function MusicPlayer({ emotion, loading }) {
           <YouTube
             videoId={currentSong.url.split('v=')[1]} // Extract the video ID from the URL
             opts={{
-              height: '0', 
-              width: '0',  
+              height: '0', // Set height to 0 to hide the video
+              width: '0',  // Set width to 0 to hide the video
               playerVars: {
-                autoplay: 1,  
-                controls: 0, 
+                autoplay: 1,  // Autoplay the video
+                controls: 0,  // Hide video controls
                 modestbranding: 1,  // Remove YouTube branding
-                rel: 0,  
+                rel: 0,  // Don't show related videos at the end
                 showinfo: 0,  // Hide video info
                 iv_load_policy: 3,  // Hide annotations
               },
@@ -173,26 +173,3 @@ function MusicPlayer({ emotion, loading }) {
 }
 
 export default MusicPlayer;
-
-
-
-/* {
-    type: "happy",
-    songs: [
-      { title: "Pala Palakura", artist: "Artist 1", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Pala%20Palakura.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9QYWxhIFBhbGFrdXJhLm1wMyIsImlhdCI6MTc0MTYzMjA2NCwiZXhwIjoxNzczMTY4MDY0fQ.VcfKYG69Xp-kQkPpeu1RCjET6sNx7SG8XWDnaZnFaK0" },
-      { title: "Po Indru Neeyaga", artist: "Artist 2", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Po%20Indru%20Neeyaga.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9QbyBJbmRydSBOZWV5YWdhLm1wMyIsImlhdCI6MTc0MTYzMjE5OSwiZXhwIjoxNzczMTY4MTk5fQ.EJBm6Y_LoFnQWV1fkqCDDJFuXPxTPWo7uhpadwaAFJM" },
-      { title: "Aathadi Aathadi", artist: "Artist 3", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Aathadi-Aathadi.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9BYXRoYWRpLUFhdGhhZGkubXAzIiwiaWF0IjoxNzQxNjMxOTU4LCJleHAiOjE3NzMxNjc5NTh9.n7sec3EqNk0MpLddr3zF6g7J9f3pyRty5n40am3GdEc" },
-      { title: "Manasilaayo", artist: "Artist 4", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Manasilaayo.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9NYW5hc2lsYWF5by5tcDMiLCJpYXQiOjE3NDE2MzIwNDIsImV4cCI6MTc3MzE2ODA0Mn0.Ax72SeQbVc3V5S57EYVKyzxt4Iui7PyqB9UwVwHDzJ4" },
-      { title: "Arabic Kuthu", artist: "Artist 5", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/happy/Arabic%20Kuthu(KoshalWorld.Com).mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9oYXBweS9BcmFiaWMgS3V0aHUoS29zaGFsV29ybGQuQ29tKS5tcDMiLCJpYXQiOjE3NDE2MzIyNTQsImV4cCI6MTc3MzE2ODI1NH0.gvkHYvArzmsp5Mb_p8c1zeGcFjK-qASeZS6NLS9vQgU" }
-    ]
-  },
-  {
-    type: "sad",
-    songs: [
-      { title: "Kanave Kanave", artist: "Artist 1", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Kanave-Kanave-MassTamilan.com.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvS2FuYXZlLUthbmF2ZS1NYXNzVGFtaWxhbi5jb20ubXAzIiwiaWF0IjoxNzQxNjMyOTQ2LCJleHAiOjE3NzMxNjg5NDZ9.LzvFsrQzquHjuKT5rii2AiTs8LygfgBmcskGVB4I9v0" },
-      { title: "Ennodu Nee Irunthal", artist: "Artist 2", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Ennodu-Nee-Irundhal.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvRW5ub2R1LU5lZS1JcnVuZGhhbC5tcDMiLCJpYXQiOjE3NDE2MzI5MzQsImV4cCI6MTc3MzE2ODkzNH0.NI0Rovi94HMBgzIMpCHtCumdWfGdfne82OB-x1WlWSU" },
-      { title: "Po Nee Po", artist: "Artist 3", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Poo-Nee-Poo-2.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvUG9vLU5lZS1Qb28tMi5tcDMiLCJpYXQiOjE3NDE2MzI5NTcsImV4cCI6MTc3MzE2ODk1N30.5ZWYM3uHrx6A1cpWfJzdtcf5wV7lqOIgcgV9RiK0-DM" },
-      { title: "Shoot the Kuruvi", artist: "Artist 4", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Shoot-the-Kuruvi.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvU2hvb3QtdGhlLUt1cnV2aS5tcDMiLCJpYXQiOjE3NDE2MzI5NzAsImV4cCI6MTc3MzE2ODk3MH0.rQ9yL5YvG26VkK3GpjL0kzmnrqTfCfK7TTcBcHJWbJc" },
-      { title: "Yamma Yamma", artist: "Artist 5", url: "https://yashchlkrfvlmmlwjanc.supabase.co/storage/v1/object/sign/songs/sad/Yamma-Yamma.mp3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzb25ncy9zYWQvWWFtbWEtWWFtbWEubXAzIiwiaWF0IjoxNzQxNjMyOTgzLCJleHAiOjE3NzMxNjg5ODN9.1xqK_IBiWj-DGdyjqEQR2aaSsEWzh8D2egw5NJu36rg" }
-    ]
-  },*/

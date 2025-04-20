@@ -1,6 +1,7 @@
 import React, { useState,useRef, } from 'react';
 import YouTube from 'react-youtube'; 
 import { FaPlay, FaPause, FaBackward, FaForward } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 // import { SiAudiomack } from "react-icons/si";
 
@@ -59,6 +60,7 @@ const playlist = [
     const [isPlaying, setIsPlaying] = useState(true);
     const [progress, setProgress] = useState(0);
     const playerRef = useRef(null);
+    const navigate = useNavigate();
   
     const handleProgress = (e) => {
       if (e.data === 1) {
@@ -109,7 +111,10 @@ const playlist = [
   
     return (
       <div className="--allsongs-container">
-        <h1 className="--allsongs-title">🎧 Mood-Based Music Player</h1>
+        <h1 className="--allsongs-title">🎧 Mood-Based Music Player</h1><br />
+        <button className="glow-button" onClick={() => navigate("/getemotion")}>
+          Lets find your mood and listen to music!
+        </button>
   
         {playlist.map((type, index) => (
           <div key={index} className="--allsongs-section">
